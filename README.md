@@ -10,6 +10,7 @@ It features role separation between **Students** and **Instructors**, JWT authen
 
 - **Developer**: Yogesh Singh Bhadoriya
 - **LinkedIn**: [Yogesh Singh's LinkedIn](https://www.linkedin.com/in/er-yogeshsingh02/)
+- **Intern ID**: CITS4981
 - **Project Scope**: CodeTech IT Solutions Software Engineering Internship Submission (Task 2)
 
 ---
