@@ -17,7 +17,7 @@ export default function WorkspaceLayout() {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-[#0b0d11] text-slate-100 flex font-sans">
+    <div className="min-h-screen bg-[#0B0D0F] text-[#F3F4F1] flex font-sans">
       {/* Sidebar Navigation */}
       <Sidebar
         isMobileOpen={isMobileOpen}

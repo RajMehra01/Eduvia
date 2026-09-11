@@ -1,6 +1,6 @@
 import { fallbackStore } from '../config/db.js';
 
-// GET sprint analytics and velocity telemetry
+// GET sprint analytics and velocity metrics
 export const getSprintAnalytics = async (req, res) => {
   try {
     const tasks = fallbackStore.tasks;
@@ -40,6 +40,21 @@ export const getSprintAnalytics = async (req, res) => {
       { priority: 'Low', count: tasks.filter(t => t.priority === 'Low').length }
     ];
 
+    // Dynamic sprint risk evaluation (Section 9.A)
+    const activeBlockers = tasks.filter(t => t.priority === 'Blocker' && t.status !== 'deployed').length;
+    const highPriorityCount = tasks.filter(t => t.priority === 'High' && t.status !== 'deployed').length;
+
+    let riskLevel = 'Low';
+    let riskReason = 'All blockers resolved and deliverables tracking within target sprint velocity.';
+
+    if (activeBlockers > 0) {
+      riskLevel = 'Elevated';
+      riskReason = `${activeBlockers} active blocker in sprint backlog requires resolution before release.`;
+    } else if (highPriorityCount >= tasks.length * 0.5) {
+      riskLevel = 'Moderate';
+      riskReason = `${highPriorityCount} high-priority tasks in flight require active developer focus.`;
+    }
+
     res.json({
       success: true,
       data: {
@@ -53,7 +68,9 @@ export const getSprintAnalytics = async (req, res) => {
         taskCount: tasks.length,
         statusDistribution,
         priorityDistribution,
-        activeSprint: 'Sprint #14 — Distributed Consensus & Delivery Roadmap'
+        riskLevel,
+        riskReason,
+        activeSprint: 'Sprint #14 — Core Pipeline & Delivery Roadmap'
       }
     });
   } catch (error) {

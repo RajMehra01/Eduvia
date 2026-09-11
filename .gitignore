@@ -1,17 +1,18 @@
+# ============================================================================
+# Kairo PM — Version Control Ignore Rules
+# ============================================================================
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
 # Dependencies
 node_modules/
 /.pnp
 .pnp.js
 
-# Environment files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-!.env.example
-
-# Production builds
+# Production builds & compiled assets
 dist/
 build/
 coverage/
@@ -25,7 +26,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Editor & OS files
+# Editor directories & IDE files
 .vscode/
 .idea/
 *.suo
@@ -33,13 +34,34 @@ lerna-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# Temporary & Cache files
+# Testing & Subagent artifacts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+browser/
+scratch/
+
+# Temporary files & caches
+*.tmp
+*.temp
+.temp/
+temp/
 .eslintcache
 .stylelintcache
 *.tsbuildinfo
-.temp/
-temp/
-scratch/
+
+# Local database files
+*.sqlite
+*.sqlite3
+*.db

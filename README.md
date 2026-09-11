@@ -1,11 +1,11 @@
-# Kairo PM — Enterprise Project Management & Sprint Velocity SaaS ⚡📊
+# Kairo — Precision Project Management & Sprint Workspace ⚡📊
 
-> **Precision engineering project management, capacity balancing, and deliverable velocity telemetry for modern software teams.**
+> **Technical, calm, and precise engineering execution platform. Plan sprints, balance developer capacity, and track milestone delivery with zero noise.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![React 19](https://img.shields.io/badge/Frontend-React%2019-61dafb.svg)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Bundler-Vite%206-646cff.svg)](https://vitejs.dev/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Styles-Tailwind%20v4-38bdf8.svg)](https://tailwindcss.com/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Styles-Tailwind%20v4-14b8a6.svg)](https://tailwindcss.com/)
 [![Node.js](https://img.shields.io/badge/Backend-Node.js%2024-339933.svg)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Framework-Express%204-000000.svg)](https://expressjs.com/)
 [![MySQL 8](https://img.shields.io/badge/Database-MySQL%208.0-4479a1.svg)](https://www.mysql.com/)
@@ -15,70 +15,71 @@
 
 ## 📖 Overview
 
-**Kairo** is an enterprise-grade project management SaaS web application engineered to bridge the gap between high-level milestone planning and granular sprint execution. Designed with the precision aesthetic of modern productivity software such as Linear and Height, Kairo eliminates visual noise and "AI neon" clutter in favor of an **Executive Slate & Precision Indigo** design system.
+**Kairo** is an enterprise-grade project management SaaS platform engineered to bridge high-level milestone roadmaps with granular sprint execution. Designed with the intentional restraint of modern developer productivity tools (such as Linear and Height), Kairo replaces generic "AI SaaS" neon gradients and glowing cards with a focused **Graphite, Deep Charcoal, and Technical Teal** design system.
 
-The platform provides a cinematic public landing page with scroll-driven word reveals and parallax, paired with an authenticated workspace containing a **5-stage sprint Kanban board**, **story point estimations (1, 2, 3, 5, 8 pts)**, an interactive **milestone Gantt timeline**, a **real-time team capacity allocation heatmap**, and **sprint velocity burn-down telemetry**.
+The application combines a typography-led public website featuring a full-screen engineering video background and subtle liquid-glass accents, paired with a robust workspace providing a **5-stage sprint Kanban board**, **Fibonacci story points estimation (1, 2, 3, 5, 8 pts)**, an interactive **milestone Gantt timeline**, a **team workload matrix**, and **sprint velocity metrics**.
 
 ---
 
 ## ✨ Key Capabilities & Features
 
-### 1. 🌐 Cinematic Public Landing Page
-- **Editorial Typography**: Pairing clean UI typography (`Inter`) with an intentional editorial italic accent (`Instrument Serif`).
-- **Scroll-Driven Parallax**: Subtle motion orchestration via Framer Motion tied to viewport progression.
-- **Liquid-Glass Accents**: Selective, restrained luminosity blending and backdrop-filter treatment for floating controls and announcement badges.
-- **Scroll-Driven Word-Reveal Testimonial**: Progressive word-by-word opacity and contrast transitions tied to scroll depth.
-- **Interactive Capabilities Showcase**: Tabbed interactive live previews demonstrating project health, sprint boards, Gantt timelines, and workload matrices.
+### 1. 🌐 Typography-Led Public Website
+- **Minimalist Restraint**: Deep graphite (`#0B0D0F`) canvas, clean white typography (`Inter`), and restrained technical teal accents.
+- **Full-Screen Video Hero**: Engineering execution visual background without artificial overlays or heavy gradients.
+- **Subtle Liquid Glass**: Restrained luminosity blending and backdrop-filter treatment used exclusively for navigation and interactive CTAs.
+- **Scroll-Driven Word-Reveal**: Dynamic customer evaluation reveal tracking viewport progression.
+- **Interactive Capability Preview**: Live interactive mock workspace demonstrating project health, sprint boards, Gantt milestones, and capacity allocations.
 
 ### 2. 📋 Sprint Kanban Board
 - **5-Stage Workflow Pipeline**: `Backlog` ➔ `In Progress` ➔ `Code Review` ➔ `QA Testing` ➔ `Deployed`.
-- **Live Story Point Aggregations**: Automatic real-time sums of story points and task counts per column header.
-- **Fluid Status Shifting**: Instant single-click column transitions without entering deep modal trees.
-- **Dense Linear-Style Task Cards**: High information density displaying priority badges, category tags, assignee avatars, subtask checklists, and due dates.
+- **Board-First Visual Hierarchy**: Information-dense task cards prioritized over decorative containers.
+- **Real-Time Point Aggregations**: Automatic live summation of story points and task counts per workflow stage.
+- **Single-Click Quick Transitions**: Move deliverables between stages directly from the card footer without modal friction.
 
-### 3. 🎯 Task Management & Subtask Checklist
-- **Multi-Level Deliverable Tracking**: Support for parent sprint tasks with nested subtask checklists.
-- **Real-Time Activity Comments**: Chronological team discussion stream with author attribution and relative timestamps.
-- **Fibonacci Difficulty Rating**: Calibrated effort estimation scale (1, 2, 3, 5, and 8 story points).
-- **Categorical Tagging**: Specific domain categorization (`Backend`, `Frontend`, `Architecture`, `Security`, `UI/UX`, `Full Stack`).
+### 3. 🎯 Task Management & Subtask Checklists
+- **Hierarchical Deliverables**: Parent deliverables with interactive subtask completion checklists.
+- **Chronological Activity Discussions**: Comment stream with author attribution and relative timestamps.
+- **Fibonacci Effort Calibration**: Strict estimation scale (1, 2, 3, 5, and 8 story points).
+- **Engineering Domains**: Categorization across `Backend`, `Frontend`, `Full Stack`, `Architecture`, `Security`, and `UI/UX`.
 
 ### 4. 👥 Team Workload & Capacity Heatmap
-- **Bandwidth Utilization Matrix**: Measures assigned story points against individual developer limits.
-- **Semantic Workload States**:
-  - **Healthy (< 75%)**: Balanced bandwidth with sufficient headroom for code review and unexpected bugs.
-  - **At Capacity (75% – 90%)**: Near-optimal sprint load threshold.
-  - **Overloaded (> 90%)**: High-risk burnout warning with visual threshold indicators.
-- **Zero Color-Only Dependence**: Every state combines distinct semantic badges, text labels, numeric percentages, and icon cues for full accessibility.
+- **Capacity Utilization Matrix**: Measures assigned story points against individual developer bandwidth.
+- **Semantic Health Thresholds**:
+  - **Healthy (< 75%)**: Balanced capacity with headroom for review and bug triage (`#10B981`).
+  - **At Capacity (75% – 90%)**: Optimal sprint load threshold (`#F2A93B`).
+  - **Overloaded (> 90%)**: Warning threshold indicating risk of delivery bottleneck (`#EF4444`).
+- **Accessible Multi-Cue Indicators**: Every state combines distinct semantic badges, labels, percentages, and icon cues.
 
 ### 5. 📅 Milestone Gantt Schedule
-- **Synchronized Date Scale**: Two-week sprint horizon with deliverable track progress bars.
-- **Automated Trajectory Calculation**: Visual bar width and status color dynamically reflect active Kanban stages.
-- **Milestone Deadlines**: Direct identification of upcoming target deliverable dates.
+- **Timeline-First Composition**: Clean date scale where milestone trajectories visually dominate the view.
+- **Automated Stage Mapping**: Visual track completion percentages and status colors dynamically reflect active Kanban stages.
+- **Sprint Horizon Alignment**: Clear tracking against two-week sprint deadlines.
 
-### 6. 📈 Sprint Velocity & Burn-Down Telemetry
-- **Sprint Completion Rate Gauge**: Real-time ratio of deployed story points against total sprint backlog.
-- **Controlled Chart Palette**: Accessible, colorblind-safe color roles (Indigo, Emerald, Amber, Sky, Slate) avoiding jarring rainbow gradients.
-- **Priority Distribution Analysis**: Quantitative breakdown across Blocker (P0), High (P1), Normal (P2), and Low (P3) deliverables.
+### 6. 📈 Sprint Velocity & Burn-Down Metrics
+- **Velocity Completion Gauge**: Real-time ratio of deployed story points against total active sprint backlog.
+- **Reconciled Data Model**: Guaranteed numeric agreement across Overview, Kanban, Table, Gantt, and Analytics.
+- **Dynamic Sprint Risk Evaluation**: Real-time risk analysis dynamically detecting unresolved blockers in the backlog.
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ Tech Stack
 
 ### Frontend Architecture
+- **Core**: HTML5, JavaScript (ES2023), CSS3
 - **Framework**: React 19 (`react`, `react-dom`)
-- **Build Tool**: Vite 6 (ES Modules, HMR)
-- **Routing**: React Router DOM v7 (BrowserRouter with SPA scroll management)
-- **Styling**: Tailwind CSS v4 (`@tailwindcss/vite`) with custom CSS custom properties (tokens)
-- **Motion & Parallax**: Framer Motion 13 (`useScroll`, `useTransform`, `AnimatePresence`)
-- **Iconography**: Lucide React (consistent 24px grid, 1.75 stroke weight)
-- **HTTP Client**: Axios with automatic fallback interceptors
+- **Build Tool**: Vite 6 (ES Modules, HMR, Optimized Production Bundler)
+- **Routing**: React Router DOM v7 (SPA with automatic scroll-to-top)
+- **Styling**: Tailwind CSS v4 (`@tailwindcss/vite`) with custom design tokens
+- **Animations**: Framer Motion 13 (`useScroll`, `useTransform`, `AnimatePresence`)
+- **Iconography**: Lucide React (standardized 24px grid)
+- **API Client**: Axios with centralized error handling
 
 ### Backend Architecture
 - **Runtime**: Node.js v24 (ES Modules)
 - **Server Framework**: Express 4.21
-- **Database Driver**: MySQL2 with Promise connection pooling
-- **Security & Headers**: CORS, JSON body-parser, Dotenv
-- **Resilience Strategy**: Dual-mode data access with automatic, persistent in-memory fallback store when MySQL is offline during local evaluation.
+- **Database Client**: MySQL2 with Promise connection pooling
+- **Security Middleware**: CORS, JSON Body Parser, Dotenv configuration
+- **Resilience**: Dual-mode persistence architecture featuring automatic, resilient in-memory fallback store when MySQL is offline.
 
 ---
 
@@ -89,115 +90,112 @@ The platform provides a cinematic public landing page with scroll-driven word re
 │                        KAIRO PM ARCHITECTURE                           │
 └────────────────────────────────────────────────────────────────────────┘
 
- [ Client Layer — React 19 + Vite + Tailwind v4 + Framer Motion ]
-   │
-   ├── Public Landing Page (Parallax, Word-Reveal, Product Story, Hero)
-   │
-   └── Workspace Application Shell (/app)
-         │
-         ├── Context Layer (ProjectContext.jsx)
-         │     ├── Multi-Project State (activeProjectId, health)
-         │     ├── Sprint Backlog & Kanban Columns (moveTaskStatus)
-         │     ├── Team Allocation & Capacity Utilization
-         │     └── Subtasks Checklist & Activity Comments Stream
-         │
-         └── Workspace Views:
-               ├── Executive Overview (Velocity Gauge, Health, Deadlines)
-               ├── Projects Directory (Multi-project switching & cards)
-               ├── Sprint Kanban Board (Dense Linear cards, live point sums)
-               ├── Deliverable Data Table (Filterable, inline status)
-               ├── Milestone Gantt (Visual schedule tracks, status colors)
-               ├── Team Workload Heatmap (Bandwidth matrix, semantic states)
-               ├── Sprint Velocity Telemetry (Points distribution charts)
-               └── Settings (Sprint cycles, estimation scale, environment)
-   │
-   ▼ REST API via Axios (Port 5003)
-┌────────────────────────────────────────────────────────────────────────┐
- [ Backend Layer — Express 4 REST API Server ]
-   │
-   ├── /api/projects   ── Project CRUD, health statuses, active sprint
-   ├── /api/tasks      ── Task CRUD, subtask toggling, activity comments
-   ├── /api/team       ── Team capacity calculations & workload weighting
-   ├── /api/analytics  ── Sprint velocity rate, point distributions
-   └── /api/health     ── Service health telemetry & metadata
-   │
-   ▼ Connection Pooling / Dual-Mode Store
-┌────────────────────────────────────────────────────────────────────────┐
- [ Data Persistence Layer ]
-   │
-   ├── Primary: MySQL 8.0 Relational Database (kairo_pm_db)
-   └── Resilient Fallback: Memory store initialized with Kairo seed data
+  [ Client Layer — React 19 + Vite 6 + Tailwind v4 + Framer Motion ]
+    │
+    ├── Public Website (Hero, Parallax, Product Story, Testimonial)
+    │
+    └── Workspace Shell (/app)
+          │
+          ├── State Layer (ProjectContext.jsx)
+          │     ├── Project Selection & Metrics
+          │     ├── Active Tasks & Story Points (Single Source of Truth)
+          │     └── Team Workload & Dynamic Sprint Risk
+          │
+          └── Interactive Views
+                ├── Dashboard Overview (/app)
+                ├── Project Directory (/app/projects)
+                ├── Sprint Kanban Board (/app/kanban)
+                ├── Task Data Table (/app/table)
+                ├── Milestone Gantt (/app/gantt)
+                ├── Team Workload Matrix (/app/workload)
+                ├── Sprint Velocity Analytics (/app/analytics)
+                └── Workspace Settings (/app/settings)
+    │
+    ▼ (REST API / JSON via Axios)
+  [ Backend Layer — Express 4.21 + Node.js v24 ]
+    │
+    ├── /api/health       -> System uptime & health telemetry
+    ├── /api/projects     -> Multi-project catalog & status
+    ├── /api/tasks        -> CRUD operations, subtasks, comments
+    ├── /api/team         -> Team capacity & bandwidth limits
+    └── /api/analytics    -> Velocity metrics & dynamic sprint risk
+    │
+    ▼ (MySQL2 Promise Pool / Fallback Store)
+  [ Data Layer ]
+    ├── Primary: MySQL Database (kairo_pm_db)
+    └── Fallback: In-Memory Resilient Store (Zero-config instant evaluation)
 ```
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
 d:/Internship Projects/Project Mgmt/
-├── client/
-│   ├── public/
-│   │   └── favicon.svg                    # Custom Kairo PM SVG favicon
+├── client/                               # React 19 Frontend Application
+│   ├── public/                           # Static assets and favicon
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── landing/                   # Public landing page modules
-│   │   │   │   ├── LandingNavbar.jsx      # Sticky glass navbar with branding & CTA
-│   │   │   │   ├── HeroSection.jsx        # Cinematic hero with editorial typography
-│   │   │   │   ├── ProductPreview.jsx     # Composed live dashboard hero frame
-│   │   │   │   ├── ProductStory.jsx       # 4-stage narrative sequence (WHAT/WHY/HOW)
-│   │   │   │   ├── TestimonialReveal.jsx  # Scroll-driven word-reveal testimonial
-│   │   │   │   ├── FeatureShowcase.jsx    # Interactive tabbed feature suite
-│   │   │   │   ├── FinalCTA.jsx           # Clean conversion prompt
-│   │   │   │   └── LandingFooter.jsx      # SaaS footer with CITS4953 attribution
-│   │   │   └── workspace/                 # Authenticated workspace components
-│   │   │       ├── Sidebar.jsx            # Collapsible navigation & project switcher
-│   │   │       ├── Topbar.jsx             # Active project health, search & new task
-│   │   │       ├── TaskCard.jsx           # Linear-style dense card with status shift
-│   │   │       ├── TaskDetailModal.jsx    # Subtask checklist & comments stream modal
-│   │   │       ├── CreateTaskModal.jsx    # Task creation modal with point selector
-│   │   │       └── PriorityBadge.jsx      # Semantic priority badges (Blocker-Low)
+│   │   │   ├── landing/                  # Landing page modules
+│   │   │   │   ├── FeatureShowcase.jsx   # Tabbed capability showcase
+│   │   │   │   ├── FinalCTA.jsx          # Conversion call-to-action
+│   │   │   │   ├── HeroSection.jsx       # Full-screen video hero section
+│   │   │   │   ├── LandingFooter.jsx     # Production website footer
+│   │   │   │   ├── LandingNavbar.jsx     # Liquid-glass navigation header
+│   │   │   │   ├── ProductPreview.jsx    # Parallax mockup workspace frame
+│   │   │   │   ├── ProductStory.jsx      # Step-by-step engineering chapters
+│   │   │   │   └── TestimonialReveal.jsx # Scroll-driven text opacity reveal
+│   │   │   └── workspace/                # Workspace application components
+│   │   │       ├── CreateTaskModal.jsx   # Work item creation dialog
+│   │   │       ├── PriorityBadge.jsx     # WCAG-compliant priority tokens
+│   │   │       ├── Sidebar.jsx           # Responsive workspace sidebar
+│   │   │       ├── TaskCard.jsx          # Information-dense Kanban card
+│   │   │       ├── TaskDetailModal.jsx   # Deep inspection, subtasks, comments
+│   │   │       └── Topbar.jsx            # Context bar, search, velocity pill
 │   │   ├── context/
-│   │   │   └── ProjectContext.jsx         # Multi-project, task CRUD, and filter state
+│   │   │   └── ProjectContext.jsx        # Central state, metrics & calculations
 │   │   ├── layouts/
-│   │   │   └── WorkspaceLayout.jsx        # Workspace shell layout with modals & topbar
+│   │   │   └── WorkspaceLayout.jsx       # Authenticated shell layout
 │   │   ├── pages/
-│   │   │   ├── LandingPage.jsx            # Public marketing homepage
-│   │   │   ├── DashboardOverview.jsx      # Executive health, sprint progress, deadlines
-│   │   │   ├── ProjectsPage.jsx           # Multi-project directory & health cards
-│   │   │   ├── KanbanBoard.jsx            # 5-column sprint Kanban board with filters
-│   │   │   ├── TaskTableView.jsx          # Dense, filterable task data table
-│   │   │   ├── TimelineGantt.jsx          # Milestone schedule & Gantt timeline
-│   │   │   ├── WorkloadMatrix.jsx         # Team capacity allocation heatmap
-│   │   │   ├── SprintAnalytics.jsx        # Sprint velocity & distribution charts
-│   │   │   └── SettingsPage.jsx           # Workspace settings & environment status
+│   │   │   ├── DashboardOverview.jsx     # Executive KPI & pipeline overview
+│   │   │   ├── KanbanBoard.jsx           # 5-stage sprint Kanban board
+│   │   │   ├── LandingPage.jsx           # Public SaaS portal
+│   │   │   ├── ProjectsPage.jsx          # Project directory & portfolio view
+│   │   │   ├── SettingsPage.jsx          # Workspace utility settings
+│   │   │   ├── SprintAnalytics.jsx       # Velocity & dynamic risk metrics
+│   │   │   ├── TaskTableView.jsx         # Dense filterable catalog
+│   │   │   ├── TimelineGantt.jsx         # Milestone visual schedule
+│   │   │   └── WorkloadMatrix.jsx        # Developer capacity heatmap
 │   │   ├── services/
-│   │   │   └── api.js                     # Axios REST client with fallback handling
-│   │   ├── index.css                      # Design tokens, liquid glass, custom scrollbars
-│   │   ├── App.jsx                        # Application router configuration
-│   │   └── main.jsx                       # React DOM entry point
-│   ├── index.html                         # HTML template with Google Fonts
-│   ├── package.json                       # Frontend dependencies & scripts
-│   └── vite.config.js                     # Vite 6 configuration (Port 5176)
-├── server/
+│   │   │   └── api.js                    # Axios service layer
+│   │   ├── App.jsx                       # Routing configuration
+│   │   ├── index.css                     # Graphite & Teal design tokens
+│   │   └── main.jsx                      # Application entry point
+│   ├── index.html                        # HTML5 document with Inter font
+│   ├── package.json                      # Client dependencies & scripts
+│   └── vite.config.js                    # Vite bundler configuration
+│
+├── server/                               # Node.js Express REST Backend
 │   ├── config/
-│   │   └── db.js                          # MySQL connection pool + fallback store
+│   │   └── db.js                         # MySQL pool & resilient fallback store
 │   ├── controllers/
-│   │   ├── projectController.js           # Project REST handlers
-│   │   ├── taskController.js              # Task, subtask, and comment handlers
-│   │   ├── teamController.js              # Team capacity & workload handlers
-│   │   └── analyticsController.js         # Velocity telemetry & metrics handlers
-│   ├── routes/
-│   │   ├── projectRoutes.js               # /api/projects router
-│   │   ├── taskRoutes.js                  # /api/tasks router
-│   │   ├── teamRoutes.js                  # /api/team router
-│   │   └── analyticsRoutes.js             # /api/analytics router
-│   ├── server.js                          # Express entry point (Port 5003)
-│   ├── package.json                       # Backend dependencies & scripts
-│   └── .env.example                       # Backend environment template
-├── schema.sql                             # Relational database schema with Kairo seeds
-├── .env.example                           # Root environment variable template
-├── .gitignore                             # Production git ignore configuration
-└── README.md                              # Complete product documentation
+│   │   ├── analyticsController.js        # Velocity & dynamic risk logic
+│   │   ├── projectController.js          # Project portfolio endpoints
+│   │   ├── taskController.js             # Task CRUD, subtask, comment logic
+│   │   └── teamController.js             # Team member & capacity endpoints
+│   ├── routes/                           # Express route definitions
+│   │   ├── analyticsRoutes.js
+│   │   ├── projectRoutes.js
+│   │   ├── taskRoutes.js
+│   │   └── teamRoutes.js
+│   ├── package.json                      # Server dependencies & scripts
+│   └── server.js                         # Express application entry point
+│
+├── .env.example                          # Environment variable placeholders
+├── .gitignore                            # Comprehensive ignore rules
+├── LICENSE                               # MIT License
+├── README.md                             # Production documentation
+└── schema.sql                            # Production MySQL relational schema
 ```
 
 ---
@@ -205,143 +203,155 @@ d:/Internship Projects/Project Mgmt/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Node.js**: `v20.0.0` or higher (tested on Node v24)
-- **npm**: `v10.0.0` or higher
-- **MySQL Server** (Optional for local testing; application includes automatic resilient in-memory data store fallback)
+- **Node.js**: v18.0.0 or higher (v24 recommended)
+- **npm**: v9.0.0 or higher
+- **MySQL** *(Optional)*: v8.0+ for persistent database storage
 
----
-
-### Installation & Local Setup
-
-#### 1. Clone the Local Repository
+### 1. Clone & Setup
 ```bash
-cd "d:/Internship Projects/Project Mgmt"
+git clone https://github.com/RajMehra01/Eduvia.git
+cd Eduvia
 ```
 
-#### 2. Configure Environment Variables
-Copy `.env.example` to `.env` in the root and in `server/`:
-```bash
-cp .env.example .env
-cp server/.env.example server/.env
-```
-
-#### 3. Backend Server Setup
+### 2. Backend Setup
 ```bash
 cd server
 npm install
-npm start
-```
-> The API server will start on **`http://localhost:5003`**.  
-> Test health: `curl http://localhost:5003/api/health`
 
-#### 4. Frontend Client Setup
-Open a separate terminal:
+# (Optional) Create .env from template
+cp .env.example .env
+
+# Start backend server
+node server.js
+```
+The backend will launch on:
+- API Server: `http://localhost:5003`
+- Health Check: `http://localhost:5003/api/health`
+
+*(Note: If MySQL is not running locally, Kairo automatically falls back to its built-in in-memory dataset, ensuring 100% offline evaluation without setup friction).*
+
+### 3. Frontend Setup
+In a new terminal:
 ```bash
 cd client
 npm install
+
+# Launch Vite dev server
 npm run dev
 ```
-> Vite dev server will start on **`http://localhost:5176`**.  
-> Open your browser and navigate to **`http://localhost:5176`**.
+The frontend will launch on:
+- Public Website & Workspace: `http://localhost:5176`
 
 ---
 
 ## 🔐 Environment Variables
 
-The project strictly follows security best practices. Zero credentials or secret tokens are committed to source control.
+The repository follows strict security practices. No credentials or secrets are committed to version control.
 
-| Variable | Description | Default / Recommended |
+| Variable | Description | Safe Placeholder / Default |
 | :--- | :--- | :--- |
-| `PORT` | Express API port | `5003` |
-| `NODE_ENV` | Runtime environment mode | `development` |
-| `DB_HOST` | MySQL hostname | `localhost` |
-| `DB_PORT` | MySQL port | `3306` |
-| `DB_USER` | MySQL database user | `root` |
-| `DB_PASSWORD` | MySQL password | *(set in your local .env)* |
-| `DB_NAME` | Database name | `kairo_pm_db` |
-| `JWT_SECRET` | Authentication secret key | *(random 32+ character string)* |
-| `VITE_API_URL` | Frontend API base URL | `http://localhost:5003/api` |
+| `PORT` | Express server port | `5003` |
+| `NODE_ENV` | Runtime environment | `development` |
+| `DB_HOST` | MySQL database host | `localhost` |
+| `DB_PORT` | MySQL database port | `3306` |
+| `DB_USER` | MySQL username | `your_mysql_username` |
+| `DB_PASSWORD` | MySQL password | `your_mysql_password` |
+| `DB_NAME` | MySQL database name | `kairo_pm_db` |
+| `JWT_SECRET` | Authentication token secret | `your_secure_jwt_secret_token` |
+| `VITE_API_URL` | Client API target base URL | `http://localhost:5003/api` |
 
 ---
 
-## 🗄️ Database Setup
+## 🗄️ Database Setup (Optional)
 
-If you wish to run against a real MySQL instance:
+To connect Kairo to a local MySQL instance:
 
 1. Start your local MySQL service.
-2. Execute `schema.sql`:
+2. Execute the schema file:
 ```bash
-mysql -u root -p < schema.sql
+mysql -u your_username -p < schema.sql
 ```
-3. The script will automatically create `kairo_pm_db` and populate initial production seed records for projects, sprints, team members, tasks, subtasks, and activity comments.
+3. Update `server/.env` with your database credentials.
 
 ---
 
-## 🎨 Design System & Token Architecture
+## 📡 REST API Reference
 
-Kairo utilizes a semantic design token system avoiding arbitrary hex codes inside components.
+| Method | Endpoint | Description | Status |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/health` | Service health and telemetry | `200 OK` |
+| `GET` | `/api/projects` | Fetch all project roadmaps | `200 OK` |
+| `POST` | `/api/projects` | Register a new project | `201 Created` |
+| `GET` | `/api/tasks` | Fetch sprint deliverables | `200 OK` |
+| `POST` | `/api/tasks` | Create a new deliverable item | `201 Created` |
+| `PUT` | `/api/tasks/:id` | Update deliverable stage or attributes | `200 OK` |
+| `DELETE` | `/api/tasks/:id` | Remove a deliverable from sprint | `200 OK` |
+| `POST` | `/api/tasks/:id/subtasks` | Add a subtask checklist item | `201 Created` |
+| `POST` | `/api/tasks/:id/comments` | Post an activity discussion note | `201 Created` |
+| `GET` | `/api/team` | Fetch team members and capacity limits | `200 OK` |
+| `GET` | `/api/analytics` | Fetch sprint velocity & risk evaluation | `200 OK` |
+
+---
+
+## 🎨 Design System & Color Palette
+
+Kairo replaces noisy gradients with a curated, professional color system:
 
 ```css
 :root {
-  /* Slate Surface Foundations */
-  --background: #0b0d11;
-  --surface: #11141c;
-  --surface-elevated: #161b26;
-  --surface-muted: #1e2433;
+  /* Graphite & Charcoal Surfaces */
+  --background: #0B0D0F;       /* Graphite / Near-black canvas */
+  --surface: #12161A;          /* Deep charcoal container */
+  --surface-elevated: #171C21; /* Card & interactive surface */
+  --surface-card: #1D2329;     /* Elevated item surface */
 
   /* Borders */
-  --border: #1f2637;
-  --border-subtle: #161c28;
-  --border-strong: #2e384f;
+  --border: #1D2329;
+  --border-subtle: #161B20;
+  --border-strong: #262F38;
 
   /* Typography */
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #F3F4F1;     /* High contrast clean white */
+  --text-secondary: #A7B0B8;   /* Balanced slate gray */
+  --text-muted: #707A84;       /* Muted technical gray */
 
-  /* Primary Brand: Precision Indigo */
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --primary-soft: rgba(99, 102, 241, 0.12);
+  /* Primary Brand Accent: Technical Teal */
+  --primary: #19B5A5;          /* Base brand accent */
+  --primary-active: #2DD4BF;   /* Bright teal for active states */
+  --primary-hover: #149A8C;    /* Interaction hover state */
 
-  /* Semantic Roles (WCAG AAA Compliant) */
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --info: #0ea5e9;
+  /* Secondary Accent */
+  --secondary-accent: #F2A93B; /* Warm amber for high priority */
 
-  /* Controlled Accessible Chart Roles */
-  --chart-1: #6366f1; /* Velocity */
-  --chart-2: #10b981; /* Deployed */
-  --chart-3: #f59e0b; /* In Progress */
-  --chart-4: #0ea5e9; /* Review / QA */
-  --chart-5: #64748b; /* Backlog */
+  /* Semantic Status Roles */
+  --success: #10B981;          /* Deployed / Verified */
+  --warning: #F2A93B;          /* High Priority / At Capacity */
+  --danger: #EF4444;           /* Blocker / Overloaded */
+  --info: #0EA5E9;             /* Review & QA Testing */
 }
 ```
 
 ---
 
-## 🔒 Security Audit & Best Practices
+## 🔒 Security Audit & Handling
 
-- **Zero Hardcoded Secrets**: All configuration values are loaded from `process.env` via `dotenv`.
-- **Environment Isolation**: `.env` and `.env.*` are explicitly listed in `.gitignore`. Only `.env.example` with safe placeholder keys is present in the repository.
+- **Zero Committed Credentials**: Complete audit verified that no real passwords, API tokens, database keys, or private certificates exist in the repository.
+- **Environment Isolation**: `.env` and `.env.*` are strictly ignored by `.gitignore`.
 - **SQL Injection Prevention**: Parameterized queries via `mysql2/promise` prepared statements.
-- **CORS Configuration**: Restrained Cross-Origin Resource Sharing middleware.
-- **Input Sanitization**: Trimmed and type-validated payload fields for task and subtask creation.
+- **Dual-Mode Fallback Security**: Offline fallback uses an in-memory data store with no external attack surface.
 
 ---
 
 ## 🧪 Build & Verification
 
-To verify production bundle compilation and code validity:
+To verify production bundle compilation:
 
 ```bash
-# Frontend build verification
 cd client
 npm run build
 ```
 
-The output bundle will be generated into `client/dist/` with zero TypeScript or JSX syntax errors.
+Expected result: Zero TypeScript/JSX syntax errors, production bundle compiled into `client/dist/`.
 
 ---
 
@@ -351,8 +361,9 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
-## 👨‍💻 Author & Project Attribution
+## 👨‍💻 Author & Attribution
 
-- **Project Submission**: CodeTech IT Solutions Software Engineering Internship Final Deliverable
+- **Developer**: Raj Mehra
 - **Intern ID**: `CITS4953`
-- **Application**: Kairo PM — Enterprise Project Management & Sprint Velocity SaaS
+- **Application**: Kairo — Precision Project Management / Sprint Workspace
+- **Target Repository**: `https://github.com/RajMehra01/Eduvia.git`

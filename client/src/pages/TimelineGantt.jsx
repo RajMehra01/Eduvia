@@ -1,5 +1,5 @@
 import React from 'react';
-import { CalendarDays, Calendar, Clock, CheckCircle2, ChevronRight, Layers } from 'lucide-react';
+import { CalendarDays, Calendar, Clock, CheckCircle2 } from 'lucide-react';
 import { useProject } from '../context/ProjectContext';
 
 export default function TimelineGantt() {
@@ -12,15 +12,15 @@ export default function TimelineGantt() {
   const getStatusColor = (status) => {
     switch (status) {
       case 'deployed':
-        return 'bg-emerald-500 border-emerald-400/80 text-emerald-100';
+        return 'bg-[#10B981] border-[#10B981]/80 text-[#0B0D0F]';
       case 'in_progress':
-        return 'bg-indigo-500 border-indigo-400/80 text-indigo-100';
+        return 'bg-[#19B5A5] border-[#2DD4BF]/80 text-[#0B0D0F]';
       case 'review':
-        return 'bg-purple-500 border-purple-400/80 text-purple-100';
+        return 'bg-[#F2A93B] border-[#F2A93B]/80 text-[#0B0D0F]';
       case 'qa':
-        return 'bg-sky-500 border-sky-400/80 text-sky-100';
+        return 'bg-[#0EA5E9] border-[#0EA5E9]/80 text-[#0B0D0F]';
       default:
-        return 'bg-slate-600 border-slate-500/80 text-slate-200';
+        return 'bg-[#707A84] border-[#707A84]/80 text-[#F3F4F1]';
     }
   };
 
@@ -42,39 +42,39 @@ export default function TimelineGantt() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="panel-slate rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="panel-slate rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-[#1D2329]">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold text-slate-100 tracking-tight flex items-center gap-2.5">
-            <CalendarDays className="w-6 h-6 text-indigo-400" />
+          <h1 className="text-xl sm:text-2xl font-bold text-[#F3F4F1] tracking-tight flex items-center gap-2.5">
+            <CalendarDays className="w-6 h-6 text-[#2DD4BF]" />
             Milestone Gantt Schedule
           </h1>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-[#A7B0B8] mt-0.5">
             Synchronized deliverable tracks and target milestone deadlines for {activeProject?.name}.
           </p>
         </div>
 
         <div className="flex items-center gap-3 text-xs font-mono">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#161b26] border border-[#232b3e] text-indigo-300">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#171C21] border border-[#1D2329] text-[#2DD4BF]">
             <Calendar className="w-3.5 h-3.5" />
-            <span>Sprint #14 (July 15 – 31)</span>
+            <span>Sprint #14 (July 15–31)</span>
           </div>
         </div>
       </div>
 
       {/* Gantt Timeline Container */}
-      <div className="panel-slate rounded-2xl p-5 space-y-4 border border-[#1f2637]">
+      <div className="panel-slate rounded-2xl p-5 space-y-4 border border-[#1D2329]">
         {/* Timeline Header Date Scale */}
-        <div className="grid grid-cols-12 gap-2 pb-3 border-b border-[#1c2333] text-[11px] font-mono text-slate-400">
-          <div className="col-span-12 sm:col-span-5 font-semibold text-slate-300">Deliverable Work Item</div>
+        <div className="grid grid-cols-12 gap-2 pb-3 border-b border-[#1D2329] text-[11px] font-mono text-[#707A84]">
+          <div className="col-span-12 sm:col-span-5 font-semibold text-[#A7B0B8]">Deliverable Work Item</div>
           <div className="hidden sm:grid col-span-7 grid-cols-8 text-center">
             {days.map((d, i) => (
-              <span key={i} className="text-slate-400">{d}</span>
+              <span key={i} className="text-[#707A84]">{d}</span>
             ))}
           </div>
         </div>
 
         {/* Deliverable Track Rows */}
-        <div className="space-y-4 pt-1">
+        <div className="space-y-3 pt-1">
           {activeTasks.map((task) => {
             const width = getCompletionWidth(task.status);
             const statusColor = getStatusColor(task.status);
@@ -83,7 +83,7 @@ export default function TimelineGantt() {
               <div
                 key={task.id}
                 onClick={() => setSelectedTask(task)}
-                className="p-3 bg-[#131722] hover:bg-[#171c2a] rounded-xl border border-[#1c2436] space-y-2.5 cursor-pointer transition-colors"
+                className="p-3 bg-[#171C21] hover:bg-[#1D2329] rounded-xl border border-[#1D2329] space-y-2.5 cursor-pointer transition-colors"
               >
                 {/* Task Information Row */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
@@ -91,34 +91,36 @@ export default function TimelineGantt() {
                     <span
                       className={`text-[9px] font-mono px-2 py-0.5 rounded capitalize font-bold ${
                         task.status === 'deployed'
-                          ? 'bg-emerald-950/70 text-emerald-300 border border-emerald-800/60'
+                          ? 'bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/30'
                           : task.status === 'in_progress'
-                          ? 'bg-indigo-950/70 text-indigo-300 border border-indigo-800/60'
-                          : 'bg-slate-800 text-slate-300 border border-slate-700'
+                          ? 'bg-[#19B5A5]/15 text-[#2DD4BF] border border-[#19B5A5]/30'
+                          : task.status === 'review'
+                          ? 'bg-[#F2A93B]/15 text-[#F2A93B] border border-[#F2A93B]/30'
+                          : 'bg-[#12161A] text-[#A7B0B8] border border-[#1D2329]'
                       }`}
                     >
                       {task.status.replace('_', ' ')}
                     </span>
-                    <span className="font-semibold text-slate-200 truncate hover:text-indigo-400 transition-colors">
+                    <span className="font-semibold text-[#F3F4F1] truncate hover:text-[#2DD4BF] transition-colors">
                       {task.title}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-3 shrink-0 text-[11px] font-mono">
-                    <span className="text-slate-400 flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-slate-400" /> Due: {task.dueDate}
+                    <span className="text-[#707A84] flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-[#707A84]" /> Due: {task.dueDate}
                     </span>
-                    <span className="text-indigo-300 bg-[#192030] px-2 py-0.5 rounded border border-[#27324c]">
+                    <span className="text-[#2DD4BF] bg-[#12161A] px-2 py-0.5 rounded border border-[#1D2329]">
                       {task.points} pts
                     </span>
-                    <span className="text-slate-300 font-medium">
+                    <span className="text-[#A7B0B8] font-medium">
                       {task.assignee?.split(' ')[0]}
                     </span>
                   </div>
                 </div>
 
                 {/* Visual Gantt Bar Schedule */}
-                <div className="w-full bg-[#181d2a] h-3.5 rounded-full overflow-hidden p-0.5 border border-[#222a3d] relative">
+                <div className="w-full bg-[#12161A] h-3.5 rounded-full overflow-hidden p-0.5 border border-[#1D2329] relative">
                   <div
                     className={`h-full rounded-full transition-all duration-500 border ${statusColor}`}
                     style={{ width }}

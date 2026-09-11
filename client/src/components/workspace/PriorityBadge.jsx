@@ -5,26 +5,26 @@ export default function PriorityBadge({ priority, size = 'sm' }) {
   const configs = {
     Blocker: {
       label: 'Blocker',
-      bg: 'bg-rose-950/60 text-rose-300 border-rose-800/60',
-      dot: 'bg-rose-500',
+      bg: 'bg-[#EF4444]/15 text-[#EF4444] border-[#EF4444]/30',
+      dot: 'bg-[#EF4444]',
       icon: AlertCircle
     },
     High: {
       label: 'High',
-      bg: 'bg-amber-950/50 text-amber-300 border-amber-800/60',
-      dot: 'bg-amber-500',
+      bg: 'bg-[#F2A93B]/15 text-[#F2A93B] border-[#F2A93B]/30',
+      dot: 'bg-[#F2A93B]',
       icon: AlertTriangle
     },
     Normal: {
       label: 'Normal',
-      bg: 'bg-indigo-950/50 text-indigo-300 border-indigo-800/60',
-      dot: 'bg-indigo-400',
+      bg: 'bg-[#19B5A5]/15 text-[#2DD4BF] border-[#19B5A5]/30',
+      dot: 'bg-[#19B5A5]',
       icon: ArrowUp
     },
     Low: {
       label: 'Low',
-      bg: 'bg-slate-900/70 text-slate-400 border-slate-700/60',
-      dot: 'bg-slate-500',
+      bg: 'bg-[#707A84]/15 text-[#A7B0B8] border-[#707A84]/30',
+      dot: 'bg-[#707A84]',
       icon: ArrowDown
     }
   };

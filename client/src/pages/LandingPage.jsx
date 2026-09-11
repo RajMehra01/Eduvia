@@ -14,7 +14,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0b0d11] text-slate-100 selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-[#0B0D0F] text-[#F3F4F1] selection:bg-[#19B5A5]/30 selection:text-[#2DD4BF]">
       <LandingNavbar />
       <main>
         <HeroSection />

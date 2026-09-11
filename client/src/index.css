@@ -2,105 +2,109 @@
 
 @layer base {
   :root {
-    /* Executive Slate & Precision Indigo Design Tokens */
-    --background: #0b0d11;
-    --foreground: #f1f5f9;
+    /* Graphite & Technical Charcoal Palette */
+    --background: #0B0D0F;
+    --foreground: #F3F4F1;
 
-    --surface: #11141c;
-    --surface-elevated: #161b26;
-    --surface-muted: #1e2433;
+    --surface: #12161A;
+    --surface-elevated: #171C21;
+    --surface-card: #1D2329;
 
-    --border: #1f2637;
-    --border-subtle: #161c28;
-    --border-strong: #2e384f;
+    --border: #1D2329;
+    --border-subtle: #161B20;
+    --border-strong: #2A333C;
 
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --text-primary: #F3F4F1;
+    --text-secondary: #A7B0B8;
+    --text-muted: #707A84;
 
-    /* Primary Brand: Calm, Trustworthy Precision Indigo */
-    --primary: #6366f1;
-    --primary-hover: #4f46e5;
-    --primary-soft: rgba(99, 102, 241, 0.12);
+    /* Primary Accent: Technical Teal */
+    --primary: #19B5A5;
+    --primary-hover: #149A8C;
+    --primary-active: #2DD4BF;
+    --primary-soft: rgba(25, 181, 165, 0.12);
 
-    /* Semantic Status Tokens (Strict WCAG AA/AAA Compliance) */
-    --success: #10b981;
+    /* Secondary Accent: Warm Amber */
+    --secondary-accent: #F2A93B;
+    --secondary-soft: rgba(242, 169, 59, 0.12);
+
+    /* Semantic Status Tokens */
+    --success: #10B981;
     --success-soft: rgba(16, 185, 129, 0.12);
-    --warning: #f59e0b;
-    --warning-soft: rgba(245, 158, 11, 0.12);
-    --danger: #ef4444;
+    --warning: #F2A93B;
+    --warning-soft: rgba(242, 169, 59, 0.12);
+    --danger: #EF4444;
     --danger-soft: rgba(239, 68, 68, 0.12);
-    --info: #0ea5e9;
+    --info: #0EA5E9;
     --info-soft: rgba(14, 165, 233, 0.12);
 
-    /* Controlled, Colorblind-Safe Chart Palette */
-    --chart-1: #6366f1; /* Velocity / Primary */
-    --chart-2: #10b981; /* Deployed / Completed */
-    --chart-3: #f59e0b; /* In Progress */
-    --chart-4: #0ea5e9; /* Code Review / QA */
-    --chart-5: #64748b; /* Backlog */
+    /* Data Visualization / Chart Tokens */
+    --chart-1: #19B5A5; /* Primary Velocity / Teal */
+    --chart-2: #10B981; /* Deployed / Completed */
+    --chart-3: #F2A93B; /* In Progress / Amber */
+    --chart-4: #0EA5E9; /* Code Review / QA */
+    --chart-5: #707A84; /* Backlog / Muted */
   }
 
   body {
     background-color: var(--background);
     color: var(--text-primary);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     letter-spacing: -0.01em;
   }
 }
 
-/* Editorial Typography */
-.font-serif-editorial {
-  font-family: 'Instrument Serif', Georgia, serif;
-}
-
-/* Slate Surface Utility Classes */
+/* Surface Utility Classes */
 .panel-slate {
-  background-color: #11141c;
-  border: 1px solid #1f2637;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  background-color: #12161A;
+  border: 1px solid #1D2329;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
 }
 
 .panel-slate-elevated {
-  background-color: #161b26;
-  border: 1px solid #232b3e;
-  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.5);
+  background-color: #171C21;
+  border: 1px solid #262F38;
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.6);
 }
 
 .card-slate {
-  background-color: #131720;
-  border: 1px solid #1c2333;
+  background-color: #171C21;
+  border: 1px solid #1D2329;
   transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-slate:hover {
-  border-color: #2e384f;
-  background-color: #171c28;
+  border-color: #262F38;
+  background-color: #1D2329;
   transform: translateY(-1px);
 }
 
-/* Subtle, Restrained Liquid Glass Utilities */
+/* Liquid Glass (Restrained Reference Implementation) */
 .liquid-glass {
-  background: rgba(17, 20, 28, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: rgba(0, 0, 0, 0.4);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
   position: relative;
+  overflow: hidden;
 }
 
 .liquid-glass-pill {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 /* Interactive Focus Ring */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #19B5A5;
   outline-offset: 2px;
 }
 
@@ -111,14 +115,14 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d1017;
+  background: #0B0D0F;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1f2637;
+  background: #1D2329;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2e384f;
+  background: #2A333C;
 }

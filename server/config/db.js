@@ -16,7 +16,7 @@ export const fallbackStore = {
       ownerName: 'Marcus Vance',
       startDate: '2026-06-01',
       targetDate: '2026-10-30',
-      activeSprint: 'Sprint #14 — Distributed Consensus & Delivery Roadmap'
+      activeSprint: 'Sprint #14 — Core Pipeline & Delivery Roadmap'
     },
     {
       id: 'proj-102',
@@ -85,7 +85,7 @@ export const fallbackStore = {
       title: 'Distributed ACID Transaction Isolation in Order Placement Pipeline',
       description: 'Guarantee zero race-condition stock deduction across multi-tenant shards with MySQL row-level lock rollbacks.',
       status: 'deployed',
-      priority: 'Blocker',
+      priority: 'High',
       category: 'Backend',
       points: 5,
       assignee: 'Marcus Vance',
@@ -163,8 +163,8 @@ export const fallbackStore = {
       id: 'task-105',
       projectId: 'proj-101',
       sprintId: 'sp-14',
-      title: 'Precision Executive Slate & Indigo Design Token System',
-      description: 'Unify semantic color variables, accessible WCAG AAA contrast scales, and liquid-glass overlay styling.',
+      title: 'Design System Tokens & Accessibility Standards',
+      description: 'Unify semantic color variables, accessible WCAG AAA contrast scales, and component styling.',
       status: 'qa',
       priority: 'Normal',
       category: 'UI/UX',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { KanbanSquare, Search, Filter, Plus, Layers, Sparkles } from 'lucide-react';
+import { KanbanSquare, Search, Plus } from 'lucide-react';
 import { useProject } from '../context/ProjectContext';
 import TaskCard from '../components/workspace/TaskCard';
 
@@ -19,32 +19,32 @@ export default function KanbanBoard() {
     {
       id: 'backlog',
       label: 'Backlog',
-      accent: 'border-slate-700/60 bg-slate-900/40 text-slate-300',
-      dot: 'bg-slate-400'
+      accent: 'border-[#1D2329] bg-[#171C21] text-[#A7B0B8]',
+      dot: 'bg-[#707A84]'
     },
     {
       id: 'in_progress',
       label: 'In Progress',
-      accent: 'border-indigo-800/60 bg-indigo-950/30 text-indigo-300',
-      dot: 'bg-indigo-400'
+      accent: 'border-[#19B5A5]/30 bg-[#171C21] text-[#2DD4BF]',
+      dot: 'bg-[#2DD4BF]'
     },
     {
       id: 'review',
       label: 'Code Review',
-      accent: 'border-purple-800/60 bg-purple-950/30 text-purple-300',
-      dot: 'bg-purple-400'
+      accent: 'border-[#F2A93B]/30 bg-[#171C21] text-[#F2A93B]',
+      dot: 'bg-[#F2A93B]'
     },
     {
       id: 'qa',
       label: 'QA Testing',
-      accent: 'border-sky-800/60 bg-sky-950/30 text-sky-300',
-      dot: 'bg-sky-400'
+      accent: 'border-[#0EA5E9]/30 bg-[#171C21] text-[#0EA5E9]',
+      dot: 'bg-[#0EA5E9]'
     },
     {
       id: 'deployed',
       label: 'Deployed',
-      accent: 'border-emerald-800/60 bg-emerald-950/30 text-emerald-300',
-      dot: 'bg-emerald-400'
+      accent: 'border-[#10B981]/30 bg-[#171C21] text-[#10B981]',
+      dot: 'bg-[#10B981]'
     }
   ];
 
@@ -60,37 +60,37 @@ export default function KanbanBoard() {
   return (
     <div className="space-y-5">
       {/* Sprint Header & Filter Panel */}
-      <div className="panel-slate rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="panel-slate rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border border-[#1D2329]">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-indigo-950/80 border border-indigo-800/60 text-indigo-400 flex items-center justify-center shrink-0">
+          <div className="w-9 h-9 rounded-xl bg-[#171C21] border border-[#1D2329] text-[#2DD4BF] flex items-center justify-center shrink-0">
             <KanbanSquare className="w-5 h-5" />
           </div>
           <div>
-            <div className="text-[11px] font-mono font-semibold text-indigo-400 uppercase tracking-wider">
+            <div className="text-[11px] font-mono font-semibold text-[#2DD4BF] uppercase tracking-wider">
               {activeProject?.keyIdentifier || 'KRO'} • Sprint Kanban Board
             </div>
-            <h2 className="text-base sm:text-lg font-bold text-slate-100">
-              {activeProject?.activeSprint || 'Sprint #14 — Deliverable Roadmap'}
+            <h2 className="text-base sm:text-lg font-bold text-[#F3F4F1]">
+              {activeProject?.activeSprint || 'Sprint #14 (July 15–31)'}
             </h2>
           </div>
         </div>
 
         <div className="flex items-center gap-2.5 w-full md:w-auto">
           <div className="relative flex-1 md:w-60">
-            <Search className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-2.5" />
+            <Search className="w-3.5 h-3.5 text-[#707A84] absolute left-3 top-2.5" />
             <input
               type="text"
               placeholder="Search sprint work..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#161b26] border border-[#232b3e] rounded-xl pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-indigo-500 font-medium"
+              className="w-full bg-[#171C21] border border-[#1D2329] rounded-xl pl-8 pr-3 py-1.5 text-xs text-[#F3F4F1] placeholder-[#707A84] focus:outline-none focus:border-[#19B5A5] font-medium"
             />
           </div>
 
           <select
             value={filterPriority}
             onChange={(e) => setFilterPriority(e.target.value)}
-            className="bg-[#161b26] border border-[#232b3e] rounded-xl px-2.5 py-1.5 text-xs font-semibold text-slate-200 focus:outline-none focus:border-indigo-500 cursor-pointer"
+            className="bg-[#171C21] border border-[#1D2329] rounded-xl px-2.5 py-1.5 text-xs font-semibold text-[#F3F4F1] focus:outline-none focus:border-[#19B5A5] cursor-pointer"
           >
             <option value="All">All Priorities</option>
             <option value="Blocker">Blocker</option>
@@ -101,7 +101,7 @@ export default function KanbanBoard() {
 
           <button
             onClick={() => setShowCreateModal(true)}
-            className="px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-sm transition-colors flex items-center gap-1 shrink-0"
+            className="px-3.5 py-1.5 rounded-xl bg-[#19B5A5] hover:bg-[#149A8C] text-[#0B0D0F] text-xs font-semibold shadow-sm transition-colors flex items-center gap-1 shrink-0"
           >
             <Plus className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Add Item</span>
@@ -118,7 +118,7 @@ export default function KanbanBoard() {
           return (
             <div
               key={col.id}
-              className="bg-[#0f1219] rounded-xl p-2.5 border border-[#1b2233] space-y-3 min-h-[550px] flex flex-col justify-between"
+              className="bg-[#12161A] rounded-xl p-2.5 border border-[#1D2329] space-y-3 min-h-[550px] flex flex-col justify-between"
             >
               <div className="space-y-3">
                 {/* Column Header */}
@@ -130,7 +130,7 @@ export default function KanbanBoard() {
                     <span className="uppercase tracking-wider text-[11px] font-bold">{col.label}</span>
                   </div>
 
-                  <span className="px-2 py-0.5 rounded bg-[#11151f] text-slate-200 font-mono text-[10px] font-bold border border-[#232b3d]">
+                  <span className="px-2 py-0.5 rounded bg-[#12161A] text-[#F3F4F1] font-mono text-[10px] font-bold border border-[#1D2329]">
                     {colTasks.length} ({colPoints}pt)
                   </span>
                 </div>
@@ -146,7 +146,7 @@ export default function KanbanBoard() {
                   ))}
 
                   {colTasks.length === 0 && (
-                    <div className="py-8 text-center border border-dashed border-[#1c2333] rounded-xl text-slate-400 text-xs">
+                    <div className="py-8 text-center border border-dashed border-[#1D2329] rounded-xl text-[#707A84] text-xs">
                       No tasks in {col.label.toLowerCase()}
                     </div>
                   )}
@@ -156,9 +156,9 @@ export default function KanbanBoard() {
               {/* Bottom Fast Add Button */}
               <button
                 onClick={() => setShowCreateModal(true)}
-                className="w-full py-1.5 rounded-lg border border-dashed border-[#20283b] hover:border-indigo-500/50 hover:bg-[#141824] text-slate-400 hover:text-slate-200 text-xs font-medium transition-colors flex items-center justify-center gap-1"
+                className="w-full py-1.5 rounded-lg border border-dashed border-[#1D2329] hover:border-[#19B5A5]/50 hover:bg-[#171C21] text-[#707A84] hover:text-[#F3F4F1] text-xs font-medium transition-colors flex items-center justify-center gap-1"
               >
-                <Plus className="w-3 h-3 text-slate-400" />
+                <Plus className="w-3 h-3 text-[#707A84]" />
                 <span>Add Task</span>
               </button>
             </div>
