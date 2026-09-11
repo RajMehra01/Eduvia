@@ -10,6 +10,15 @@ const api = axios.create({
   timeout: 8000
 });
 
+// Request interceptor to attach Bearer token if present
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('kairo_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 // Response interceptor for clean error handling
 api.interceptors.response.use(
   (response) => response,
@@ -18,6 +27,12 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+export const authApi = {
+  login: (credentials) => api.post('/auth/login', credentials),
+  register: (userData) => api.post('/auth/register', userData),
+  getMe: () => api.get('/auth/me')
+};
 
 export const projectApi = {
   getProjects: () => api.get('/projects'),

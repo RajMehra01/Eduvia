@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard,
   FolderGit2,
@@ -12,13 +12,22 @@ import {
   ExternalLink,
   ChevronDown,
   Layers,
-  Sparkles
+  Sparkles,
+  LogOut
 } from 'lucide-react';
 import { useProject } from '../../context/ProjectContext';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Sidebar({ isMobileOpen, onCloseMobile }) {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
   const { projects, activeProjectId, setActiveProjectId, activeProject } = useProject();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   const navItems = [
     { label: 'Overview', path: '/app', icon: LayoutDashboard, exact: true },
@@ -134,18 +143,32 @@ export default function Sidebar({ isMobileOpen, onCloseMobile }) {
               <ExternalLink className="w-3 h-3 text-[#707A84]" />
             </Link>
 
-            {/* User Profile Pill */}
-            <div className="flex items-center gap-2.5 px-2.5 py-1.5 rounded-xl bg-[#12161A] border border-[#1D2329]">
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-                alt="Elena Rostova"
-                className="w-7 h-7 rounded-lg object-cover border border-[#1D2329] shrink-0"
-              />
-              <div className="truncate flex-1">
-                <div className="text-xs font-semibold text-[#F3F4F1] truncate">Elena Rostova</div>
-                <div className="text-[10px] text-[#2DD4BF] truncate">VP of Engineering</div>
+            {/* User Profile Pill & Sign Out */}
+            <div className="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-xl bg-[#12161A] border border-[#1D2329]">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <img
+                  src={user?.avatar || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80'}
+                  alt={user?.name || 'User'}
+                  className="w-7 h-7 rounded-lg object-cover border border-[#1D2329] shrink-0"
+                />
+                <div className="truncate flex-1">
+                  <div className="text-xs font-semibold text-[#F3F4F1] truncate">
+                    {user?.name || 'Elena Rostova'}
+                  </div>
+                  <div className="text-[10px] text-[#2DD4BF] truncate">
+                    {user?.role || 'VP of Engineering'}
+                  </div>
+                </div>
               </div>
-              <div className="w-2 h-2 rounded-full bg-[#10B981] shrink-0" title="Online" />
+              <button
+                id="workspace-logout-btn"
+                onClick={handleLogout}
+                title="Sign Out of Workspace"
+                className="p-1.5 rounded-lg text-[#707A84] hover:text-[#EF4444] hover:bg-[#171C21] transition-colors shrink-0 cursor-pointer"
+                aria-label="Sign Out"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
         </div>

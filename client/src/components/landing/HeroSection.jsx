@@ -6,7 +6,7 @@ import { ArrowRight, Play, CheckCircle2 } from 'lucide-react';
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen pt-32 pb-20 flex flex-col items-center justify-center text-center px-4 sm:px-6 overflow-hidden bg-[#0B0D0F]">
-      {/* Full-screen Video Background (No dark/gradient overlay per specification) */}
+      {/* Full-screen Video Background */}
       <video
         src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4"
         autoPlay
@@ -15,6 +15,10 @@ export default function HeroSection() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
+
+      {/* Subtle localized soft shading to protect text legibility on bright video frames */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B0D0F]/45 via-black/15 to-[#0B0D0F] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(11,13,15,0.35)_0%,transparent_75%)] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto space-y-6 relative z-10">
         {/* Restrained Liquid-Glass Announcement Pill */}
@@ -35,7 +39,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#F3F4F1] leading-[1.08]"
+          className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#F3F4F1] leading-[1.08] text-contrast-title"
         >
           Plan sprints with precision.
           <br />
@@ -47,7 +51,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-lg text-[#A7B0B8] max-w-2xl mx-auto font-normal leading-relaxed"
+          className="text-base sm:text-lg text-[#D1D7DC] max-w-2xl mx-auto font-normal leading-relaxed text-contrast-body"
         >
           Plan projects, balance engineering capacity, and track milestone execution from one focused workspace. Designed for high-output software teams.
         </motion.p>
@@ -72,7 +76,7 @@ export default function HeroSection() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <a
               href="#preview"
-              className="w-full sm:w-auto px-6 py-3 rounded-xl liquid-glass text-[#F3F4F1] hover:text-white font-medium text-sm transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl liquid-glass text-[#F3F4F1] hover:text-white font-medium text-sm transition-all flex items-center justify-center gap-2 text-contrast-nav"
             >
               <Play className="w-3.5 h-3.5 text-[#2DD4BF]" />
               <span>Explore Preview</span>
@@ -85,7 +89,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-[#A7B0B8]"
+          className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-[#E2E8F0] text-contrast-body"
         >
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-3.5 h-3.5 text-[#19B5A5]" />
