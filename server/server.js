@@ -25,12 +25,12 @@ app.use('/api/certificates', certificateRoutes);
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
-    service: 'SkillStream LMS API Server',
-    developer: 'Yogesh Singh Bhadoriya',
+    service: 'Eduvia LMS Modular API Server',
+    organization: 'Eduvia Education Technologies Inc.',
     timestamp: new Date()
   });
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 SkillStream LMS Modular API Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Eduvia LMS Modular API Server running on http://localhost:${PORT}`);
 });

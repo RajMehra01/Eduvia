@@ -1,41 +1,138 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --bg-base: #fbfbfa;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #ffffff;
+    --border-subtle: #e5e7eb;
+    --border-highlight: #bfdbfe;
+    
+    --primary: #1d4ed8;
+    --primary-hover: #1e40af;
+    --primary-light: #eff6ff;
+    --emerald: #059669;
+    --amber: #d97706;
+  }
+
   body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-sans);
+    background-color: var(--bg-base);
+    color: #1e293b;
+    letter-spacing: -0.011em;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+    color: #0f172a;
   }
 }
 
-.glass-panel {
-  background: rgba(15, 23, 42, 0.8);
+/* EdTech Surface & Card Tokens */
+.eduvia-surface,
+.ln-surface {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+}
+
+.eduvia-card,
+.ln-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.eduvia-card:hover,
+.ln-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 10px 28px -6px rgba(37, 99, 235, 0.12), 0 2px 8px -2px rgba(15, 23, 42, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Academic Paper Certificate Surface */
+.eduvia-certificate {
+  background: #fffdf9;
+  box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(217, 119, 6, 0.25);
+}
+
+/* Restrained Secondary Glassmorphism Tokens */
+.eduvia-glass {
+  background: rgba(255, 255, 255, 0.76);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  box-shadow: 0 8px 30px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
 }
 
-.glass-card {
-  background: rgba(30, 41, 59, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+.eduvia-glass-card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
 }
 
-.gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+.eduvia-glass-dark {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.35);
+}
+
+/* Hero Background Pattern */
+.eduvia-hero-bg {
+  background: radial-gradient(circle at 85% 15%, rgba(219, 234, 254, 0.45) 0%, transparent 60%),
+              radial-gradient(circle at 10% 80%, rgba(254, 243, 199, 0.35) 0%, transparent 50%),
+              linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+/* Gradients */
+.eduvia-text-gradient {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0284c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.eduvia-brand-gradient {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+}
+
+/* Scrollbar Customization */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94a3b8;
+}
+
+/* Focus Ring */
+*:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

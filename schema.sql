@@ -1,9 +1,10 @@
--- SkillStream LMS Database Schema
--- Developed for CodeTech IT Solutions Software Engineering Internship Task (Task 2)
--- Author: Yogesh Singh Bhadoriya
+-- ==========================================================
+-- Eduvia LMS Database Schema
+-- Production-grade Learning Management System schema for MySQL
+-- ==========================================================
 
-CREATE DATABASE IF NOT EXISTS skillstream_lms_db;
-USE skillstream_lms_db;
+CREATE DATABASE IF NOT EXISTS eduvia_lms_db;
+USE eduvia_lms_db;
 
 -- 1. Users Table (Students & Instructors)
 CREATE TABLE IF NOT EXISTS users (
@@ -78,12 +79,13 @@ CREATE TABLE IF NOT EXISTS certificates (
     FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
 );
 
--- Seed Initial Data
-INSERT INTO users (id, name, email, password_hash, role) VALUES 
-('user-101', 'Yogesh Singh Bhadoriya', 'yogesh@example.com', '$2a$10$e8N...hashedpass', 'INSTRUCTOR')
+-- Seed Initial Demo Data
+INSERT INTO users (id, name, email, password_hash, role, avatar_url) VALUES 
+('usr-101', 'Alex Morgan', 'alex.morgan@eduvia.org', '$2a$10$e8N...hashedpass', 'STUDENT', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'),
+('user-inst-1', 'Dr. Elena Rostova', 'elena@eduvia.org', '$2a$10$e8N...hashedpass', 'INSTRUCTOR', 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80')
 ON DUPLICATE KEY UPDATE name=VALUES(name);
 
 INSERT INTO courses (id, instructor_id, title, category, level, price, rating, reviews_count, enrolled_count, duration, thumbnail_url, description) VALUES
-('course-1', 'user-101', 'Full-Stack Modern Web Development Masterclass', 'Web Development', 'Intermediate', 3499.00, 4.90, 1280, 3420, '28.5 Hours', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', 'Master React 19, Node.js, Express, REST APIs, Tailwind CSS, and MySQL database design through production-level projects.'),
-('course-2', 'user-101', 'AI & Machine Learning Foundations with Python', 'AI & ML', 'Beginner', 2999.00, 4.80, 940, 2190, '22 Hours', 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80', 'Learn NumPy, Pandas, Scikit-Learn, Neural Networks, and deploy LLM applications with python.')
+('course-1', 'user-inst-1', 'Full-Stack Modern Web Development Masterclass', 'Web Development', 'Intermediate', 3499.00, 4.95, 1420, 3840, '32.5 Hours', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80', 'Master React 19 architecture, Node.js, Express microservices, relational MySQL schemas, and Tailwind CSS v4 design systems.'),
+('course-6', 'user-inst-1', 'Machine Learning with Python & Scikit-Learn', 'AI & Machine Learning', 'Beginner', 2999.00, 4.88, 1120, 2680, '26.0 Hours', 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80', 'Learn NumPy, Pandas, Scikit-Learn algorithms, exploratory data analysis, regression, classification, and clustering.')
 ON DUPLICATE KEY UPDATE title=VALUES(title);

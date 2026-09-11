@@ -12,11 +12,13 @@ import StudentDashboard from './pages/StudentDashboard';
 import InstructorDashboard from './pages/InstructorDashboard';
 import Certificates from './pages/Certificates';
 import ProtectedRoute from './components/ProtectedRoute';
+import ScrollManager from './utils/scrollManager';
 
 export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <ScrollManager />
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />

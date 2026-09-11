@@ -4,11 +4,19 @@ import pool from '../config/db.js';
 
 let mockUsers = [
   {
-    id: 'user-101',
-    name: 'Yogesh Singh Bhadoriya',
-    email: 'yogesh@example.com',
+    id: 'user-inst-1',
+    name: 'Dr. Elena Rostova',
+    email: 'elena@eduvia.org',
     password_hash: '$2a$10$e8N...hashed',
     role: 'INSTRUCTOR',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    id: 'usr-101',
+    name: 'Alex Morgan',
+    email: 'alex.morgan@eduvia.org',
+    password_hash: '$2a$10$e8N...hashed',
+    role: 'STUDENT',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
   }
 ];
@@ -42,7 +50,7 @@ export const register = async (req, res) => {
 
     const token = jwt.sign(
       { id: userId, email, role: userRole },
-      process.env.JWT_SECRET || 'skillstream_secret_jwt_key_2026',
+      process.env.JWT_SECRET || 'eduvia_secret_jwt_key_2026',
       { expiresIn: '7d' }
     );
 
@@ -86,7 +94,7 @@ export const login = async (req, res) => {
 
     const token = jwt.sign(
       { id: user.id, email: user.email, role: user.role },
-      process.env.JWT_SECRET || 'skillstream_secret_jwt_key_2026',
+      process.env.JWT_SECRET || 'eduvia_secret_jwt_key_2026',
       { expiresIn: '7d' }
     );
 

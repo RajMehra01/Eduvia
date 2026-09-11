@@ -5,24 +5,29 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem('skillstream_user');
+    const savedUser = localStorage.getItem('eduvia_user');
     return savedUser ? JSON.parse(savedUser) : {
       id: 'usr-101',
-      name: 'Yogesh Singh Bhadoriya',
-      email: 'yogesh@example.com',
+      name: 'Alex Morgan',
+      email: 'alex.morgan@eduvia.org',
       role: 'STUDENT', // 'STUDENT' or 'INSTRUCTOR'
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
+      title: 'Senior Learning Fellow',
+      isDemo: true
     };
   });
 
-  const [token, setToken] = useState(() => localStorage.getItem('skillstream_token') || 'mock-jwt-token-xyz');
+  const [token, setToken] = useState(() => 
+    localStorage.getItem('eduvia_token') || 'eduvia-jwt-token-active'
+  );
+  
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (user) {
-      localStorage.setItem('skillstream_user', JSON.stringify(user));
+      localStorage.setItem('eduvia_user', JSON.stringify(user));
     } else {
-      localStorage.removeItem('skillstream_user');
+      localStorage.removeItem('eduvia_user');
     }
   }, [user]);
 
@@ -32,26 +37,33 @@ export function AuthProvider({ children }) {
       // Attempt backend API login
       const res = await api.post('/auth/login', { email, password });
       if (res.data?.success) {
-        setUser(res.data.data.user);
+        const isDemo = email.toLowerCase().includes('alex') || email.toLowerCase().includes('demo') || email.toLowerCase().includes('eduvia.org');
+        const userData = { ...res.data.data.user, isDemo };
+        setUser(userData);
         setToken(res.data.data.token);
-        localStorage.setItem('skillstream_token', res.data.data.token);
+        localStorage.setItem('eduvia_token', res.data.data.token);
         setLoading(false);
         return { success: true };
       }
     } catch (err) {
-      console.warn('Backend login unavailable, fallback to instant mock auth');
+      console.warn('Backend login unavailable, fallback to demo auth');
       // Mock login fallback
-      const role = email.includes('instructor') ? 'INSTRUCTOR' : 'STUDENT';
+      const role = email.toLowerCase().includes('instructor') ? 'INSTRUCTOR' : 'STUDENT';
+      const isDemo = email.toLowerCase().includes('alex') || email.toLowerCase().includes('demo') || email.toLowerCase().includes('eduvia.org');
       const mockUser = {
-        id: `usr-${Date.now()}`,
-        name: email.split('@')[0].toUpperCase(),
+        id: isDemo ? (role === 'INSTRUCTOR' ? 'usr-inst-1' : 'usr-101') : `usr-${Date.now()}`,
+        name: isDemo ? (role === 'INSTRUCTOR' ? 'Dr. Elena Rostova' : 'Alex Morgan') : email.split('@')[0].replace('.', ' ').replace(/\b\w/g, l => l.toUpperCase()),
         email,
         role,
-        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
+        isDemo,
+        avatar: role === 'INSTRUCTOR' 
+          ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+          : 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
+        title: role === 'INSTRUCTOR' ? 'Lead Technical Educator' : 'Career Development Fellow'
       };
       setUser(mockUser);
-      setToken('mock-jwt-token-123');
-      localStorage.setItem('skillstream_token', 'mock-jwt-token-123');
+      setToken('eduvia-mock-token-session');
+      localStorage.setItem('eduvia_token', 'eduvia-mock-token-session');
       setLoading(false);
       return { success: true };
     }
@@ -62,37 +74,56 @@ export function AuthProvider({ children }) {
     try {
       const res = await api.post('/auth/register', { name, email, password, role });
       if (res.data?.success) {
-        setUser(res.data.data.user);
+        const userData = { ...res.data.data.user, isDemo: false };
+        setUser(userData);
         setToken(res.data.data.token);
-        localStorage.setItem('skillstream_token', res.data.data.token);
+        localStorage.setItem('eduvia_token', res.data.data.token);
         setLoading(false);
         return { success: true };
       }
     } catch (err) {
       const mockUser = {
         id: `usr-${Date.now()}`,
-        name,
+        name: name || 'Eduvia Learner',
         email,
         role: role || 'STUDENT',
-        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
+        isDemo: false, // Freshly registered user starts with 0 enrollments
+        avatar: (role || 'STUDENT') === 'INSTRUCTOR'
+          ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+          : 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
+        title: (role || 'STUDENT') === 'INSTRUCTOR' ? 'Lead Technical Educator' : 'Career Development Fellow'
       };
       setUser(mockUser);
-      setToken('mock-jwt-token-registered');
-      localStorage.setItem('skillstream_token', 'mock-jwt-token-registered');
+      setToken('eduvia-mock-token-reg');
+      localStorage.setItem('eduvia_token', 'eduvia-mock-token-reg');
       setLoading(false);
       return { success: true };
     }
   };
 
+  const switchRole = () => {
+    if (!user) return;
+    const newRole = user.role === 'STUDENT' ? 'INSTRUCTOR' : 'STUDENT';
+    const updated = {
+      ...user,
+      role: newRole,
+      title: newRole === 'INSTRUCTOR' ? 'Lead Technical Educator' : 'Career Development Fellow',
+      avatar: newRole === 'INSTRUCTOR'
+        ? 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
+        : 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
+    };
+    setUser(updated);
+  };
+
   const logout = () => {
     setUser(null);
     setToken(null);
-    localStorage.removeItem('skillstream_token');
-    localStorage.removeItem('skillstream_user');
+    localStorage.removeItem('eduvia_token');
+    localStorage.removeItem('eduvia_user');
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, loading, login, register, logout, setUser }}>
+    <AuthContext.Provider value={{ user, token, loading, login, register, logout, switchRole, setUser }}>
       {children}
     </AuthContext.Provider>
   );

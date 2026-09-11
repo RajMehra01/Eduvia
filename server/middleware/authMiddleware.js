@@ -8,12 +8,12 @@ export const verifyToken = (req, res, next) => {
 
   const token = authHeader.split(' ')[1];
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'skillstream_secret_jwt_key_2026');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'eduvia_secret_jwt_key_2026');
     req.user = decoded;
     next();
   } catch (err) {
     // If mock token or invalid token, pass gracefully for testing
-    req.user = { id: 'usr-101', role: 'STUDENT', email: 'yogesh@example.com' };
+    req.user = { id: 'usr-101', role: 'STUDENT', email: 'alex.morgan@eduvia.org' };
     next();
   }
 };

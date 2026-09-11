@@ -9,9 +9,9 @@ const api = axios.create({
   }
 });
 
-// Interceptor to inject JWT Auth Token
+// Interceptor to inject JWT Auth Token for Eduvia
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('skillstream_token');
+  const token = localStorage.getItem('eduvia_token');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }

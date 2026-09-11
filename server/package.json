@@ -1,7 +1,7 @@
 {
-  "name": "skillstream-lms-server",
+  "name": "eduvia-lms-server",
   "version": "1.0.0",
-  "description": "Express Backend for SkillStream LMS - CodeTech IT Solutions Internship Task 2",
+  "description": "Express Backend for Eduvia LMS — Modular Learning Management System API",
   "main": "server.js",
   "type": "module",
   "scripts": {
